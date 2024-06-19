@@ -1,0 +1,1854 @@
+{
+	"info": {
+		"_postman_id": "aa5af731-aa7b-4a49-a205-adf89943bad3",
+		"name": "API Reference",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "6603701"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "OAuth 2.0 - Client Creds",
+					"item": [
+						{
+							"name": "test.get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API-ONBOARDING}}test",
+									"host": [
+										"{{API-ONBOARDING}}test"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "oauth2",
+						"oauth2": [
+							{
+								"key": "tokenName",
+								"value": "{{TOKEN-NAME}}",
+								"type": "string"
+							},
+							{
+								"key": "client_authentication",
+								"value": "body",
+								"type": "string"
+							},
+							{
+								"key": "clientSecret",
+								"value": "{{OAUTH-CLIENTSECRET}}",
+								"type": "string"
+							},
+							{
+								"key": "scope",
+								"value": "{{OAUTH-SCOPES}}",
+								"type": "string"
+							},
+							{
+								"key": "clientId",
+								"value": "{{OAUTH-CLIENTID}}",
+								"type": "string"
+							},
+							{
+								"key": "accessTokenUrl",
+								"value": "{{API-IDP}}connect/token",
+								"type": "string"
+							},
+							{
+								"key": "grant_type",
+								"value": "client_credentials",
+								"type": "string"
+							},
+							{
+								"key": "addTokenTo",
+								"value": "header",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				},
+				{
+					"name": "OAuth 2.0 - Auth Code with PKCE",
+					"item": [
+						{
+							"name": "test.get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API-ONBOARDING}}test",
+									"host": [
+										"{{API-ONBOARDING}}test"
+									]
+								}
+							},
+							"response": []
+						}
+					],
+					"auth": {
+						"type": "oauth2",
+						"oauth2": [
+							{
+								"key": "state",
+								"value": "{{OAUTH-STATE}}",
+								"type": "string"
+							},
+							{
+								"key": "tokenName",
+								"value": "{{TOKEN-NAME}}",
+								"type": "string"
+							},
+							{
+								"key": "useBrowser",
+								"value": true,
+								"type": "boolean"
+							},
+							{
+								"key": "client_authentication",
+								"value": "body",
+								"type": "string"
+							},
+							{
+								"key": "scope",
+								"value": "{{OAUTH-SCOPES-OFFLINE}}",
+								"type": "string"
+							},
+							{
+								"key": "clientSecret",
+								"value": "{{OAUTH-CLIENTSECRET}}",
+								"type": "string"
+							},
+							{
+								"key": "authUrl",
+								"value": "{{API-IDP}}connect/authorize",
+								"type": "string"
+							},
+							{
+								"key": "redirect_uri",
+								"value": "{{OAUTH-CALLBACK}}",
+								"type": "string"
+							},
+							{
+								"key": "grant_type",
+								"value": "authorization_code_with_pkce",
+								"type": "string"
+							},
+							{
+								"key": "clientId",
+								"value": "{{OAUTH-CLIENTID}}",
+								"type": "string"
+							},
+							{
+								"key": "accessTokenUrl",
+								"value": "{{API-IDP}}connect/token",
+								"type": "string"
+							},
+							{
+								"key": "addTokenTo",
+								"value": "header",
+								"type": "string"
+							}
+						]
+					},
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"packages": {},
+								"exec": [
+									""
+								]
+							}
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Tenant",
+			"item": [
+				{
+					"name": "Test",
+					"item": [
+						{
+							"name": "test.get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API-ONBOARDING}}test",
+									"host": [
+										"{{API-ONBOARDING}}test"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Enterprise",
+					"item": [
+						{
+							"name": "Accounts",
+							"item": [
+								{
+									"name": "Users",
+									"item": [
+										{
+											"name": "accounts.users.getall",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/users",
+													"host": [
+														"{{API-ONBOARDING}}accounts"
+													],
+													"path": [
+														"{{CURRENT-ACCOUNT}}",
+														"users"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "accounts.users.getbyid",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/users/{{CURRENT-USER}}",
+													"host": [
+														"{{API-ONBOARDING}}accounts"
+													],
+													"path": [
+														"{{CURRENT-ACCOUNT}}",
+														"users",
+														"{{CURRENT-USER}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "accounts.users.create",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "accept-charges",
+														"value": "true",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"email\": \"new.user@example.com\",\r\n    \"displayName\": \"New User\",\r\n    \"roles\": [\r\n        \"account.user\",\r\n        \"user.admin\",\r\n        \"account.settings\",\r\n        \"customer.admin\"\r\n    ]\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/users",
+													"host": [
+														"{{API-ONBOARDING}}accounts"
+													],
+													"path": [
+														"{{CURRENT-ACCOUNT}}",
+														"users"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "accounts.users.patch",
+											"request": {
+												"method": "PATCH",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "[\r\n    {\r\n        \"op\": \"replace\",\r\n        \"path\": \"/roles\",\r\n        \"value\": [\r\n            \"account.user\",\r\n            \"user.admin\",\r\n            \"account.settings\",\r\n            \"customer.admin\"\r\n        ]\r\n    }\r\n]",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/users/{{CURRENT-USER}}?accept-charges=true",
+													"host": [
+														"{{API-ONBOARDING}}accounts"
+													],
+													"path": [
+														"{{CURRENT-ACCOUNT}}",
+														"users",
+														"{{CURRENT-USER}}"
+													],
+													"query": [
+														{
+															"key": "accept-charges",
+															"value": "true"
+														}
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "accounts.users.delete",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/users/{{CURRENT-USER}}",
+													"host": [
+														"{{API-ONBOARDING}}accounts"
+													],
+													"path": [
+														"{{CURRENT-ACCOUNT}}",
+														"users",
+														"{{CURRENT-USER}}"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "Customers",
+									"item": [
+										{
+											"name": "TenantProfiles",
+											"item": [
+												{
+													"name": "account.customers.tenantprofiles.getall",
+													"request": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/customers/{{CURRENT-CUSTOMER}}/tenantprofiles",
+															"host": [
+																"{{API-ONBOARDING}}accounts"
+															],
+															"path": [
+																"{{CURRENT-ACCOUNT}}",
+																"customers",
+																"{{CURRENT-CUSTOMER}}",
+																"tenantprofiles"
+															]
+														}
+													},
+													"response": []
+												}
+											]
+										},
+										{
+											"name": "Metrics",
+											"item": [
+												{
+													"name": "accounts.customers.metrics.getbyid",
+													"request": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/customers/{{CURRENT-CUSTOMER}}/metrics",
+															"host": [
+																"{{API-ONBOARDING}}accounts"
+															],
+															"path": [
+																"{{CURRENT-ACCOUNT}}",
+																"customers",
+																"{{CURRENT-CUSTOMER}}",
+																"metrics"
+															]
+														}
+													},
+													"response": []
+												}
+											]
+										},
+										{
+											"name": "Users",
+											"item": [
+												{
+													"name": "Devices",
+													"item": [
+														{
+															"name": "account.customers.users.devices.pbx.getall",
+															"request": {
+																"method": "GET",
+																"header": [],
+																"url": {
+																	"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/customers/{{CURRENT-CUSTOMER}}/users/{{CURRENT-USER}}/devices/pbx",
+																	"host": [
+																		"{{API-ONBOARDING}}accounts"
+																	],
+																	"path": [
+																		"{{CURRENT-ACCOUNT}}",
+																		"customers",
+																		"{{CURRENT-CUSTOMER}}",
+																		"users",
+																		"{{CURRENT-USER}}",
+																		"devices",
+																		"pbx"
+																	]
+																}
+															},
+															"response": []
+														},
+														{
+															"name": "account.customers.users.devices.pbx.assign",
+															"request": {
+																"method": "PUT",
+																"header": [],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\r\n    \"clientType\": \"desktop\"\r\n}",
+																	"options": {
+																		"raw": {
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/customers/{{CURRENT-CUSTOMER}}/users/{{CURRENT-USER}}/devices/pbx/{{CURRENT-DEVICEID}}/assign",
+																	"host": [
+																		"{{API-ONBOARDING}}accounts"
+																	],
+																	"path": [
+																		"{{CURRENT-ACCOUNT}}",
+																		"customers",
+																		"{{CURRENT-CUSTOMER}}",
+																		"users",
+																		"{{CURRENT-USER}}",
+																		"devices",
+																		"pbx",
+																		"{{CURRENT-DEVICEID}}",
+																		"assign"
+																	]
+																}
+															},
+															"response": []
+														},
+														{
+															"name": "account.customers.users.devices.pbx.unassign",
+															"request": {
+																"method": "PUT",
+																"header": [],
+																"body": {
+																	"mode": "raw",
+																	"raw": "",
+																	"options": {
+																		"raw": {
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/customers/{{CURRENT-CUSTOMER}}/users/{{CURRENT-USER}}/devices/pbx/{{CURRENT-DEVICEID}}/unassign",
+																	"host": [
+																		"{{API-ONBOARDING}}accounts"
+																	],
+																	"path": [
+																		"{{CURRENT-ACCOUNT}}",
+																		"customers",
+																		"{{CURRENT-CUSTOMER}}",
+																		"users",
+																		"{{CURRENT-USER}}",
+																		"devices",
+																		"pbx",
+																		"{{CURRENT-DEVICEID}}",
+																		"unassign"
+																	]
+																}
+															},
+															"response": []
+														}
+													]
+												},
+												{
+													"name": "account.customers.users.getall",
+													"request": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/customers/{{CURRENT-CUSTOMER}}/users",
+															"host": [
+																"{{API-ONBOARDING}}accounts"
+															],
+															"path": [
+																"{{CURRENT-ACCOUNT}}",
+																"customers",
+																"{{CURRENT-CUSTOMER}}",
+																"users"
+															]
+														}
+													},
+													"response": []
+												},
+												{
+													"name": "account.customers.users.getbyid",
+													"request": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/customers/{{CURRENT-CUSTOMER}}/users/{{CURRENT-USER}}",
+															"host": [
+																"{{API-ONBOARDING}}accounts"
+															],
+															"path": [
+																"{{CURRENT-ACCOUNT}}",
+																"customers",
+																"{{CURRENT-CUSTOMER}}",
+																"users",
+																"{{CURRENT-USER}}"
+															]
+														}
+													},
+													"response": []
+												},
+												{
+													"name": "account.customers.users.sendActivationEmail",
+													"request": {
+														"method": "POST",
+														"header": [],
+														"url": {
+															"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/customers/{{CURRENT-CUSTOMER}}/users/{{CURRENT-USER}}/sendActivationEmail",
+															"host": [
+																"{{API-ONBOARDING}}accounts"
+															],
+															"path": [
+																"{{CURRENT-ACCOUNT}}",
+																"customers",
+																"{{CURRENT-CUSTOMER}}",
+																"users",
+																"{{CURRENT-USER}}",
+																"sendActivationEmail"
+															]
+														}
+													},
+													"response": []
+												},
+												{
+													"name": "account.customers.users.sendUConnectActivationEmail",
+													"request": {
+														"method": "POST",
+														"header": [],
+														"url": {
+															"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/customers/{{CURRENT-CUSTOMER}}/users/{{CURRENT-USER}}/sendUConnectActivationEmail",
+															"host": [
+																"{{API-ONBOARDING}}accounts"
+															],
+															"path": [
+																"{{CURRENT-ACCOUNT}}",
+																"customers",
+																"{{CURRENT-CUSTOMER}}",
+																"users",
+																"{{CURRENT-USER}}",
+																"sendUConnectActivationEmail"
+															]
+														}
+													},
+													"response": []
+												},
+												{
+													"name": "accounts.customers.patch",
+													"request": {
+														"method": "PATCH",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "[\r\n    {\r\n        \"op\": \"replace\",\r\n        \"path\": \"/roles\",\r\n        \"value\": [\r\n            \"user.admin\",\r\n            \"customer.user\",\r\n            \"customer.user.supervisorl1\"\r\n        ]\r\n    }\r\n]",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/customers/{{CURRENT-CUSTOMER}}/users/{{CURRENT-USER}}",
+															"host": [
+																"{{API-ONBOARDING}}accounts"
+															],
+															"path": [
+																"{{CURRENT-ACCOUNT}}",
+																"customers",
+																"{{CURRENT-CUSTOMER}}",
+																"users",
+																"{{CURRENT-USER}}"
+															]
+														}
+													},
+													"response": []
+												}
+											]
+										},
+										{
+											"name": "accounts.customers.getall",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/customers",
+													"host": [
+														"{{API-ONBOARDING}}accounts"
+													],
+													"path": [
+														"{{CURRENT-ACCOUNT}}",
+														"customers"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "accounts.customers.getbyid",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/customers/{{CURRENT-CUSTOMER}}",
+													"host": [
+														"{{API-ONBOARDING}}accounts"
+													],
+													"path": [
+														"{{CURRENT-ACCOUNT}}",
+														"customers",
+														"{{CURRENT-CUSTOMER}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "accounts.customers.create (Kazoo)",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "accept-charges",
+														"value": "true",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"name\": \"New Customer 1\",\r\n    \"description\": \"This is new customer 1\",\r\n    \"enabled\": false,\r\n    \"timezone\": \"America/Los_Angeles\",\r\n    \"countryCode\": \"US\",\r\n    \"reference\": \"This is a ref\",\r\n    \"tenantProfileType\": \"TenantProfileType_insights\",\r\n    \"pbxConnectionProfile\": {\r\n        \"_type\": \"KazooPbxConnectionProfile\",\r\n        \"name\": \"my kazoo pbx\",\r\n        \"hostRest\": \"https://hostrest.com\",\r\n        \"hostWebsocket\": \"wss://hostwebsokcet.com\",\r\n        \"accountId\": \"11112222333344445555666677778888\",\r\n        \"apiKey\": \"1111111122222222333333334444444455555555666666667777777788888888\"\r\n    }\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/customers",
+													"host": [
+														"{{API-ONBOARDING}}accounts"
+													],
+													"path": [
+														"{{CURRENT-ACCOUNT}}",
+														"customers"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "accounts.customers.create (MockPbx)",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "accept-charges",
+														"value": "true",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"name\": \"New Customer 1\",\r\n    \"description\": \"This is new customer 1\",\r\n    \"enabled\": false,\r\n    \"timezone\": \"America/Los_Angeles\",\r\n    \"countryCode\": \"US\",\r\n    \"reference\": \"This is a ref\",\r\n    \"mode\": \"demo\",\r\n\t\"pbxConnectionProfile\": {\r\n        \"_type\": \"MockPbxConnectionProfile\",\r\n        \"name\": \"A Mock Pbx\"\r\n    }\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/customers",
+													"host": [
+														"{{API-ONBOARDING}}accounts"
+													],
+													"path": [
+														"{{CURRENT-ACCOUNT}}",
+														"customers"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "accounts.customers.create (3CX)",
+											"request": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "accept-charges",
+														"value": "true",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"name\": \"New Customer 1\",\r\n    \"description\": \"This is new customer 1\",\r\n    \"enabled\": false,\r\n    \"timezone\": \"America/Los_Angeles\",\r\n    \"countryCode\": \"US\",\r\n    \"reference\": \"This is a ref\",\r\n    \"tenantProfileType\": \"TenantProfileType_insights\",\r\n    \"pbxConnectionProfile\": {\r\n        \"_type\": \"ThreeCxConnectionProfile\",\r\n        \"name\": \"3CX Onboarding Test 1\",\r\n    \t\"licenseKey\": \"licenseKey2-licenseKey-licenseKey\",\r\n    \t\"username\": \"username-username-username\",\r\n    \t\"password\": \"password password password\"\r\n    }\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/customers",
+													"host": [
+														"{{API-ONBOARDING}}accounts"
+													],
+													"path": [
+														"{{CURRENT-ACCOUNT}}",
+														"customers"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "accounts.customers.patch",
+											"request": {
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "accept-charges",
+														"value": "true",
+														"type": "text"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "[\r\n    {\r\n        \"op\": \"replace\",\r\n        \"path\": \"/description\",\r\n        \"value\": \"New description\"\r\n    }\r\n]",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/customers/{{CURRENT-CUSTOMER}}",
+													"host": [
+														"{{API-ONBOARDING}}accounts"
+													],
+													"path": [
+														"{{CURRENT-ACCOUNT}}",
+														"customers",
+														"{{CURRENT-CUSTOMER}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "accounts.customers.delbyid",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}/customers/{{CURRENT-CUSTOMER}}?accept-charges=true",
+													"host": [
+														"{{API-ONBOARDING}}accounts"
+													],
+													"path": [
+														"{{CURRENT-ACCOUNT}}",
+														"customers",
+														"{{CURRENT-CUSTOMER}}"
+													],
+													"query": [
+														{
+															"key": "accept-charges",
+															"value": "true"
+														}
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "accounts.getall",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API-ONBOARDING}}accounts",
+											"host": [
+												"{{API-ONBOARDING}}accounts"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "accounts.getbyid",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API-ONBOARDING}}accounts/{{CURRENT-ACCOUNT}}",
+											"host": [
+												"{{API-ONBOARDING}}accounts"
+											],
+											"path": [
+												"{{CURRENT-ACCOUNT}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "accounts.create",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"name\": \"Account TEST 1\",\r\n    \"description\": \"This is my new account\",\r\n    \"enabled\": true,\r\n    \"reference\": \"the account ref\"\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API-ONBOARDING}}accounts",
+											"host": [
+												"{{API-ONBOARDING}}accounts"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Account",
+					"item": [
+						{
+							"name": "Users",
+							"item": [
+								{
+									"name": "Devices",
+									"item": [
+										{
+											"name": "customers.users.devices.pbx.getall",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}/users/{{CURRENT-USER}}/devices/pbx",
+													"host": [
+														"{{API-ONBOARDING}}customers"
+													],
+													"path": [
+														"{{CURRENT-CUSTOMER}}",
+														"users",
+														"{{CURRENT-USER}}",
+														"devices",
+														"pbx"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "customers.users.devices.pbx.assign",
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"clientType\": \"desktop\"\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}/users/{{CURRENT-USER}}/devices/pbx/{{CURRENT-DEVICEID}}/assign",
+													"host": [
+														"{{API-ONBOARDING}}customers"
+													],
+													"path": [
+														"{{CURRENT-CUSTOMER}}",
+														"users",
+														"{{CURRENT-USER}}",
+														"devices",
+														"pbx",
+														"{{CURRENT-DEVICEID}}",
+														"assign"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "customers.users.devices.pbx.unassign",
+											"request": {
+												"method": "PUT",
+												"header": [],
+												"url": {
+													"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}/users/{{CURRENT-USER}}/devices/pbx/{{CURRENT-DEVICEID}}/unassign",
+													"host": [
+														"{{API-ONBOARDING}}customers"
+													],
+													"path": [
+														"{{CURRENT-CUSTOMER}}",
+														"users",
+														"{{CURRENT-USER}}",
+														"devices",
+														"pbx",
+														"{{CURRENT-DEVICEID}}",
+														"unassign"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "customers.users.getall",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}/users",
+											"host": [
+												"{{API-ONBOARDING}}customers"
+											],
+											"path": [
+												"{{CURRENT-CUSTOMER}}",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "customers.users.getbyid",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}/users",
+											"host": [
+												"{{API-ONBOARDING}}customers"
+											],
+											"path": [
+												"{{CURRENT-CUSTOMER}}",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "customers.users.create",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept-charges",
+												"value": "true",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"email\": \"user@example.com\",\r\n    \"displayName\": \"User One\",\r\n    \"roles\": [\r\n        \"customer.user.supervisorl1\",\r\n        \"customer.settings\",\r\n        \"user.admin\"\r\n    ]\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}/users",
+											"host": [
+												"{{API-ONBOARDING}}customers"
+											],
+											"path": [
+												"{{CURRENT-CUSTOMER}}",
+												"users"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "customers.users.patch",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "accept-charges",
+												"value": "true",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"op\": \"replace\",\r\n        \"path\": \"/roles\",\r\n        \"value\": [\r\n            \"account.user\",\r\n            \"user.admin\",\r\n            \"account.settings\",\r\n            \"customer.admin\"\r\n        ]\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}/users/{{CURRENT-USER}}",
+											"host": [
+												"{{API-ONBOARDING}}customers"
+											],
+											"path": [
+												"{{CURRENT-CUSTOMER}}",
+												"users",
+												"{{CURRENT-USER}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "customers.users.delbyid",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "accept-charges",
+												"value": "true",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}/users/{{CURRENT-USER}}",
+											"host": [
+												"{{API-ONBOARDING}}customers"
+											],
+											"path": [
+												"{{CURRENT-CUSTOMER}}",
+												"users",
+												"{{CURRENT-USER}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "customers.users.sendActivationEmail",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept-charges",
+												"value": "true",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}/users/{{CURRENT-USER}}/sendActivationEmail",
+											"host": [
+												"{{API-ONBOARDING}}customers"
+											],
+											"path": [
+												"{{CURRENT-CUSTOMER}}",
+												"users",
+												"{{CURRENT-USER}}",
+												"sendActivationEmail"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "customers.users.sendUConnectActivationEmail",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept-charges",
+												"value": "true",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}/users/{{CURRENT-USER}}/sendUConnectActivationEmail",
+											"host": [
+												"{{API-ONBOARDING}}customers"
+											],
+											"path": [
+												"{{CURRENT-CUSTOMER}}",
+												"users",
+												"{{CURRENT-USER}}",
+												"sendUConnectActivationEmail"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "TenantProfiles",
+							"item": [
+								{
+									"name": "customers.tenantprofiles.getall",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}/tenantprofiles",
+											"host": [
+												"{{API-ONBOARDING}}customers"
+											],
+											"path": [
+												"{{CURRENT-CUSTOMER}}",
+												"tenantprofiles"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Metrics",
+							"item": [
+								{
+									"name": "customers.metrics.getbyid",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}/metrics",
+											"host": [
+												"{{API-ONBOARDING}}customers"
+											],
+											"path": [
+												"{{CURRENT-CUSTOMER}}",
+												"metrics"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Pbx",
+							"item": [
+								{
+									"name": "customers.pbx.getall",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}/pbxs",
+											"host": [
+												"{{API-ONBOARDING}}customers"
+											],
+											"path": [
+												"{{CURRENT-CUSTOMER}}",
+												"pbxs"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "customers.pbx.getbyid",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}/pbxs/{{CURRENT-PBX}}",
+											"host": [
+												"{{API-ONBOARDING}}customers"
+											],
+											"path": [
+												"{{CURRENT-CUSTOMER}}",
+												"pbxs",
+												"{{CURRENT-PBX}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "customers.pbx.delbyid",
+									"request": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "accept-charges",
+												"value": "true",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}/pbxs/{{CURRENT-PBX}}",
+											"host": [
+												"{{API-ONBOARDING}}customers"
+											],
+											"path": [
+												"{{CURRENT-CUSTOMER}}",
+												"pbxs",
+												"{{CURRENT-PBX}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "customers.pbx.create",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "accept-charges",
+												"value": "true",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"_type\": \"KazooPbxConnectionProfile\",\r\n    \"name\": \"my kazoo pbx\",\r\n    \"hostRest\": \"https://hostrest.com\",\r\n    \"hostWebsocket\": \"wss://hostwebsokcet.com\",\r\n    \"accountId\": \"11112222333344445555666677778888\",\r\n    \"apiKey\": \"1111111122222222333333334444444455555555666666667777777788888888\",\r\n    \"countryCode\": \"US\",\r\n    \"enabled\": true\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}/pbxs",
+											"host": [
+												"{{API-ONBOARDING}}customers"
+											],
+											"path": [
+												"{{CURRENT-CUSTOMER}}",
+												"pbxs"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "customers.pbx.patch",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "accept-charges",
+												"value": "true",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"op\": \"replace\",\r\n        \"path\": \"/enabled\",\r\n        \"value\": true\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}/pbxs/{{CURRENT-PBX}}",
+											"host": [
+												"{{API-ONBOARDING}}customers"
+											],
+											"path": [
+												"{{CURRENT-CUSTOMER}}",
+												"pbxs",
+												"{{CURRENT-PBX}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "customers.getall",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API-ONBOARDING}}customers",
+									"host": [
+										"{{API-ONBOARDING}}customers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "customers.getbyid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}",
+									"host": [
+										"{{API-ONBOARDING}}customers"
+									],
+									"path": [
+										"{{CURRENT-CUSTOMER}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "customers.create (Kazoo)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-charges",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Test Customer 1\",\r\n    \"description\": \"This is a new customer\",\r\n    \"enabled\": true,\r\n    \"reference\": \"The customer  ref\",\r\n    \"timezone\": \"America/Los_Angeles\",\r\n    \"countryCode\": \"US\",\r\n    \"tenantProfileType\": \"TenantProfileType_insights\",\r\n    \"pbxConnectionProfile\": {\r\n        \"_type\": \"KazooPbxConnectionProfile\",\r\n        \"name\": \"my kazoo pbx\",\r\n        \"hostRest\": \"https://hostrest.com\",\r\n        \"hostWebsocket\": \"wss://hostwebsokcet.com\",\r\n        \"accountId\": \"11112222333344445555666677778888\",\r\n        \"apiKey\": \"1111111122222222333333334444444455555555666666667777777788888888\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API-ONBOARDING}}customers",
+									"host": [
+										"{{API-ONBOARDING}}customers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "customers.create (MockPbx)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-charges",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Customer Mock 1\",\r\n    \"description\": \"This is my new customer\",\r\n    \"enabled\": false,\r\n    \"timezone\": \"America/Los_Angeles\",\r\n    \"countryCode\": \"US\",\r\n    \"reference\": \"this is my ref\",\r\n    \"mode\": \"demo\",\r\n\t\"pbxConnectionProfile\": {\r\n        \"_type\": \"MockPbxConnectionProfile\",\r\n        \"name\": \"my mock  pbx\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API-ONBOARDING}}customers",
+									"host": [
+										"{{API-ONBOARDING}}customers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "customers.create (3CX)",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "accept-charges",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\": \"Test Customer 1\",\r\n    \"description\": \"This is a new customer\",\r\n    \"enabled\": true,\r\n    \"reference\": \"The customer  ref\",\r\n    \"timezone\": \"America/Los_Angeles\",\r\n    \"countryCode\": \"US\",\r\n    \"pbxConnectionProfile\": {\r\n        \"_type\": \"ThreeCxConnectionProfile\",\r\n        \"name\": \"3CX Onboarding Test 1\",\r\n    \t\"licenseKey\": \"licenseKey2-licenseKey-licenseKey\",\r\n    \t\"username\": \"username-username-username\",\r\n    \t\"password\": \"password password password\"\r\n    }\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API-ONBOARDING}}customers",
+									"host": [
+										"{{API-ONBOARDING}}customers"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "customers.patch",
+							"request": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "accept-charges",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "[\r\n    {\r\n        \"op\": \"replace\",\r\n        \"path\": \"/description\",\r\n        \"value\": \"A new description\"\r\n    }\r\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}",
+									"host": [
+										"{{API-ONBOARDING}}customers"
+									],
+									"path": [
+										"{{CURRENT-CUSTOMER}}"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "customers.delbyid",
+							"request": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "accept-charges",
+										"value": "true",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "{{API-ONBOARDING}}customers/{{CURRENT-CUSTOMER}}",
+									"host": [
+										"{{API-ONBOARDING}}customers"
+									],
+									"path": [
+										"{{CURRENT-CUSTOMER}}"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Billing",
+					"item": [
+						{
+							"name": "billingdata.get",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{API-ONBOARDING}}billingdata",
+									"host": [
+										"{{API-ONBOARDING}}billingdata"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Customer",
+					"item": [
+						{
+							"name": "ContactDirectories",
+							"item": [
+								{
+									"name": "CRM",
+									"item": [
+										{
+											"name": "customer.getcontactdirectoryitems.getbycrmid",
+											"request": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{API-ONBOARDING}}contactdirectories/{{CURRENT-CONTACTDIRECTORY}}/crmitems/{{CURRENT-CONTACTDIRECTORYITEMID}}",
+													"host": [
+														"{{API-ONBOARDING}}contactdirectories"
+													],
+													"path": [
+														"{{CURRENT-CONTACTDIRECTORY}}",
+														"crmitems",
+														"{{CURRENT-CONTACTDIRECTORYITEMID}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "customer.getcontactdirectoryitems.deletebycrmid",
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{API-ONBOARDING}}contactdirectories/{{CURRENT-CONTACTDIRECTORY}}/crmitems/{{CURRENT-CONTACTDIRECTORYITEMID}}",
+													"host": [
+														"{{API-ONBOARDING}}contactdirectories"
+													],
+													"path": [
+														"{{CURRENT-CONTACTDIRECTORY}}",
+														"crmitems",
+														"{{CURRENT-CONTACTDIRECTORYITEMID}}"
+													]
+												}
+											},
+											"response": []
+										},
+										{
+											"name": "customer.getcontactdirectoryitems.createorupdatebycrmId",
+											"request": {
+												"method": "POST",
+												"header": [],
+												"body": {
+													"mode": "raw",
+													"raw": "{\r\n    \"id\": \"crmId1\",\r\n    \"fields\": {\r\n        \"title\": \"Mr\",\r\n        \"fullName\": \"Joe Bloggs\",\r\n        \"companyName\": \"Company\",\r\n        \"jobTitle\": \"Job Title\",\r\n        \"phone1\": \"+441234567890\",\r\n        \"email\": \"joe@example.com\",\r\n        \"field1\": \"field1\",\r\n        \"field2\": \"field2\",\r\n        \"crmId\": \"crmId1\"\r\n    }\r\n}",
+													"options": {
+														"raw": {
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{API-ONBOARDING}}contactdirectories/{{CURRENT-CONTACTDIRECTORY}}/crmitems",
+													"host": [
+														"{{API-ONBOARDING}}contactdirectories"
+													],
+													"path": [
+														"{{CURRENT-CONTACTDIRECTORY}}",
+														"crmitems"
+													]
+												}
+											},
+											"response": []
+										}
+									]
+								},
+								{
+									"name": "customer.getcontactdirectories.getall",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API-ONBOARDING}}contactdirectories",
+											"host": [
+												"{{API-ONBOARDING}}contactdirectories"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "customer.getcontactdirectories.getbyid",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API-ONBOARDING}}contactdirectories/{{CURRENT-CONTACTDIRECTORY}}",
+											"host": [
+												"{{API-ONBOARDING}}contactdirectories"
+											],
+											"path": [
+												"{{CURRENT-CONTACTDIRECTORY}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "customer.getcontactdirectoryitems.query",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API-ONBOARDING}}contactdirectories/{{CURRENT-CONTACTDIRECTORY}}/items?filter=crmId1&fields=crmId",
+											"host": [
+												"{{API-ONBOARDING}}contactdirectories"
+											],
+											"path": [
+												"{{CURRENT-CONTACTDIRECTORY}}",
+												"items"
+											],
+											"query": [
+												{
+													"key": "filter",
+													"value": "crmId1"
+												},
+												{
+													"key": "fields",
+													"value": "crmId"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "customer.getcontactdirectoryitems.getbyid",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{API-ONBOARDING}}contactdirectories/{{CURRENT-CONTACTDIRECTORY}}/items/{{CURRENT-CONTACTDIRECTORYITEMID}}",
+											"host": [
+												"{{API-ONBOARDING}}contactdirectories"
+											],
+											"path": [
+												"{{CURRENT-CONTACTDIRECTORY}}",
+												"items",
+												"{{CURRENT-CONTACTDIRECTORYITEMID}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "customer.getcontactdirectoryitems.create",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"crmId1\",\r\n    \"fields\": {\r\n        \"title\": \"Mr\",\r\n        \"fullName\": \"Joe Bloggs\",\r\n        \"companyName\": \"Company\",\r\n        \"jobTitle\": \"Job Title\",\r\n        \"phone1\": \"+441234567890\",\r\n        \"email\": \"joe@example.com\",\r\n        \"field1\": \"field1\",\r\n        \"field2\": \"field2\",\r\n        \"crmId\": \"crmId1\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API-ONBOARDING}}contactdirectories/{{CURRENT-CONTACTDIRECTORY}}/items",
+											"host": [
+												"{{API-ONBOARDING}}contactdirectories"
+											],
+											"path": [
+												"{{CURRENT-CONTACTDIRECTORY}}",
+												"items"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "customer.getcontactdirectoryitems.update",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"id\": \"crmId1\",\r\n    \"fields\": {\r\n        \"title\": \"Mr\",\r\n        \"fullName\": \"Joe Bloggs\",\r\n        \"companyName\": \"Company\",\r\n        \"jobTitle\": \"Job Title\",\r\n        \"phone1\": \"+441234567890\",\r\n        \"email\": \"joe@example.com\",\r\n        \"field1\": \"field1\",\r\n        \"field2\": \"field2\",\r\n        \"crmId\": \"crmId1\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API-ONBOARDING}}contactdirectories/{{CURRENT-CONTACTDIRECTORY}}/items/{{CURRENT-CONTACTDIRECTORYITEMID}}",
+											"host": [
+												"{{API-ONBOARDING}}contactdirectories"
+											],
+											"path": [
+												"{{CURRENT-CONTACTDIRECTORY}}",
+												"items",
+												"{{CURRENT-CONTACTDIRECTORYITEMID}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "customer.getcontactdirectoryitems.patch",
+									"request": {
+										"method": "PATCH",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "[\r\n    {\r\n        \"op\": \"replace\",\r\n        \"path\": \"/fields/email\",\r\n        \"value\": \"newemail@example.com\"\r\n    }\r\n]",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{API-ONBOARDING}}contactdirectories/{{CURRENT-CONTACTDIRECTORY}}/items/{{CURRENT-CONTACTDIRECTORYITEMID}}",
+											"host": [
+												"{{API-ONBOARDING}}contactdirectories"
+											],
+											"path": [
+												"{{CURRENT-CONTACTDIRECTORY}}",
+												"items",
+												"{{CURRENT-CONTACTDIRECTORYITEMID}}"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "customer.getcontactdirectoryitems.deletebyid",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{API-ONBOARDING}}contactdirectories/{{CURRENT-CONTACTDIRECTORY}}/items/{{CURRENT-CONTACTDIRECTORYITEMID}}",
+											"host": [
+												"{{API-ONBOARDING}}contactdirectories"
+											],
+											"path": [
+												"{{CURRENT-CONTACTDIRECTORY}}",
+												"items",
+												"{{CURRENT-CONTACTDIRECTORYITEMID}}"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "oauth2",
+				"oauth2": [
+					{
+						"key": "scope",
+						"value": "{{OAUTH-SCOPES}}",
+						"type": "string"
+					},
+					{
+						"key": "clientSecret",
+						"value": "{{OAUTH-CLIENTSECRET}}",
+						"type": "string"
+					},
+					{
+						"key": "clientId",
+						"value": "{{OAUTH-CLIENTID}}",
+						"type": "string"
+					},
+					{
+						"key": "accessTokenUrl",
+						"value": "{{API-IDP}}connect/token",
+						"type": "string"
+					},
+					{
+						"key": "grant_type",
+						"value": "client_credentials",
+						"type": "string"
+					},
+					{
+						"key": "tokenName",
+						"value": "{{TOKEN-NAME}}",
+						"type": "string"
+					},
+					{
+						"key": "addTokenTo",
+						"value": "header",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"packages": {},
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
